@@ -1,0 +1,11 @@
+body{
+      background-color: #4CAF50;
+}
+form{
+      max-width: 400px;
+      margin: 0 auto;
+}
+input{
+      margin-bottom: 10px;
+      padding: 8px;
+}

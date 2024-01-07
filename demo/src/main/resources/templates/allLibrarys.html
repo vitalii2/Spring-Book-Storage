@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All library's</title>
+</head>
+<body>
+<h1 style="color:green"><b>All library's</b></h1>
+<table border="3">
+  <tr>
+    <th>ID:</th>
+    <th>Name:</th>
+    <th>Address:</th>
+    <th>Founding year:</th>
+  </tr>
+  <tr th:each="library : ${libraries}">
+    <td th:text="${library.id}"></td>
+    <td th:text="${library.name}"></td>
+    <td th:text="${library.location}"></td>
+    <td th:text="${library.foundingYear}"></td>
+  </tr>
+</table>
+</body>
+</html>

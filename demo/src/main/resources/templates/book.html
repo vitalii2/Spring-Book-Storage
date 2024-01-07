@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<body>
+<h1>Information about chosen book</h1><hr>
+<form action="/Get/api/${book.id}" method="get">
+    <b>Book id: </b><span th:text="${book.id}"></span><br>
+    <b>Book name: </b><span th:text="${book.title}"></span><br>
+    <b>Book author: </b><span th:text="${book.author}"></span><br>
+    <b>Book year: </b><span th:text="${book.year}"></span><br>
+    <b>Book status: </b><span th:text="${book.status}"></span><br>
+</form>
+<hr>
+<form th:action="@{/Get/api/{bookId}(bookId=${book.id})}" method="post">
+    <b>change book status: </b><span th:text="${book.status}"></span><br>
+    <select name="newStatus" required>
+        <option value="busy">Busy</option>
+        <option value="not busy">not busy</option>
+    </select>
+    <button type="submit" >Change </button>
+</form>
+<form th:action="@{'/delete/api/books/' + ${book.id}}" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>

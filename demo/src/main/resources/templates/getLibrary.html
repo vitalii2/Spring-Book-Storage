@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+<h1>Information about library</h1><hr><br>
+<form action="/library/${library.id}" method="get">
+    <b>Library id: </b><span th:text="${library.id}"></span><br>
+    <b>Library name: </b><span th:text="${library.name}"></span><br>
+    <b>Library location: </b><span th:text="${library.location}"></span><br>
+    <b>Library year: </b><span th:text="${library.foundingYear}"></span><br>
+</form>
+</body>
+</html>
